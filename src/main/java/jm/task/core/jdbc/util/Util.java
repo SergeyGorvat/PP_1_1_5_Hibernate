@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class Util {
-    private static final String URL = "jdbc:mysql://localhost:3306/Users";
+    private static final String URL = "jdbc:mysql://localhost:3306/test";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "gorvat";
 
@@ -30,7 +30,6 @@ public class Util {
 
 
     private static SessionFactory sessionFactory;
-
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
@@ -38,8 +37,8 @@ public class Util {
                 Properties properties = new Properties();
 
                 //Конфигурация источника данных (Data Source)
-                properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-                properties.put(Environment.URL, "jdbc:mysql://localhost:3306/users");
+                properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+                properties.put(Environment.URL, "jdbc:mysql://localhost:3306/test");
                 properties.put(Environment.USER, "root");
                 properties.put(Environment.PASS, "gorvat");
 
